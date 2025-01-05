@@ -110,21 +110,21 @@ Além disso, recomenda-se usar um ambiente virtual Python para gerenciar depend�
 
 <img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Vitanis/img5.png">
 
-2. Após o cadastro, é preciso fazer login para ter acesso a sua própria sessão de usuário.
+5. O usuário paciente será redirecionado para a página de login.
 
-<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Telemedicina-Django/00.png">
+<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Vitanis/img6.png">
 
-3. Se o usuário for médico, em sua home, é possível visualizar também todos os outros médicos cadastrados e suas especialidades.
+6. Após o login, o usuário paciente irá para a página home, onde é possível visualizar todos os médicos cadastrados e suas especialidades.
 
-<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Telemedicina-Django/01.png">
+<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Vitanis/img7.png">
 
-4. É possível realizar um filtro para localizar um médico cadastrado de acordo com sua especialidade. Esta função está disponível para médicos ou pacientes realizarem o filtro.
+7. É possível realizar um filtro para localizar um médico cadastrado de acordo com sua especialidade. Esta função está disponível para médicos ou pacientes realizarem o filtro.
 
-<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Telemedicina-Django/02.png">
+<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Vitanis/img8.png">
 
-5. É possível realizar um filtro para localizar um médico cadastrado de acordo com o seu nome ou partes do nome. Esta função está disponível para médicos ou pacientes realizarem o filtro.
+8. O filtro também poderá ser feito localizando o médico de acordo com sua especialidade.
 
-<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Telemedicina-Django/03.png">
+<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Vitanis/img9.png">
 
 6. O médico cadastrado pode abrir horários para consultas.
 
