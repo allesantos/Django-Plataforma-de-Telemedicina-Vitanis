@@ -63,7 +63,7 @@ Este projeto é uma plataforma de telemedicina onde médicos e pacientes podem s
 
 <img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Vitanis/img7.png">
 
-7. É possível realizar um filtro para localizar um médico cadastrado de acordo com sua especialidade. Esta função está disponível para médicos ou pacientes realizarem o filtro.
+7. É possível realizar um filtro para localizar um médico cadastrado de acordo com sua especialidade. Esta função está disponível para médicos ou pacientes.
 
 <img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Vitanis/img8.png">
 
