@@ -126,9 +126,13 @@ Além disso, recomenda-se usar um ambiente virtual Python para gerenciar depend�
 
 <img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Vitanis/img9.png">
 
-6. O médico cadastrado pode abrir horários para consultas.
+9. Caso o usuário paciente tenha optado por filtrar um médico de acordo com sua especialidade, poderá ser exibida uma lista com todos que exercem a mesma função.
 
-<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Telemedicina-Django/04.png">
+<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Vitanis/img10.png">
+
+10. Após escolher o médico, o paciente será redirecionado para esta página, onde poderá marcar a consulta com base nos dias e horários disponíveis.
+
+<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Vitanis/img11.png">
 
 7. É possível o médico visualizar todas as suas consultas e seus status.
 
