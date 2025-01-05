@@ -98,6 +98,10 @@ Além disso, recomenda-se usar um ambiente virtual Python para gerenciar depend�
 
 <img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Vitanis/img2.png">
 
+2. Se o usuário for médico, após clicar no botão "Cadastrar", será redirecionado para uma página onde irá ter que realizar um cadastro legal de médico. Este cadastro irá definir que tipo de usuário e quais privilégios irá ter na plataforma.
+
+<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Vitanis/img3.png">
+
 2. Após o cadastro, é preciso fazer login para ter acesso a sua própria sessão de usuário.
 
 <img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Telemedicina-Django/00.png">
