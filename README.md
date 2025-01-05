@@ -1,8 +1,6 @@
-# Plataforma de Telemedicina
+# Plataforma de Telemedicina Vitanis Total Care
 
 Este é um projeto de uma plataforma de telemedicina desenvolvida com Django, permitindo que médicos e pacientes se cadastrem, façam login e interajam no sistema para agendar e realizar consultas online.
-
-
 
 ## Índice
 - [Descrição](#Descrição)
@@ -53,7 +51,6 @@ Antes de começar, você precisará ter as seguintes ferramentas instaladas:
 -  __Git__
   
 Além disso, recomenda-se usar um ambiente virtual Python para gerenciar dependências.
-
 
 
 ## Instalação
