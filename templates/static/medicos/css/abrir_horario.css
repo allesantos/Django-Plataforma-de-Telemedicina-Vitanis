@@ -1,0 +1,102 @@
+/* Estilos para telas maiores (desktop) */
+@media (min-width: 769px) {
+    .container {
+        max-width: 1200px; /* Define largura máxima do contêiner */
+        margin: auto; /* Centraliza o contêiner */
+        padding: 20px; /* Espaçamento interno */
+    }
+
+    .row {
+        display: flex; /* Define layout flexível */
+        flex-wrap: nowrap; /* Evita quebra de linha entre colunas */
+        justify-content: space-between; /* Distribui espaço uniformemente entre colunas */
+        align-items: flex-start; /* Alinha colunas ao topo */
+    }
+
+    .row > div {
+        margin-right: 15px; /* Espaçamento entre colunas */
+    }
+
+    .row > div:last-child {
+        margin-right: 0; /* Remove margem da última coluna */
+    }
+
+    input[type="datetime-local"] {
+        width: 70%; /* Reduz largura do campo de data e hora */
+        max-width: 400px; /* Limite máximo de largura */
+        min-width: 250px; /* Limite mínimo de largura */
+        margin: 0; /* Remove margens extras */
+    }
+}
+
+h2 {
+    margin-bottom: 20px; /* Espaço abaixo do título */
+    font-size: 25px; /* Tamanho da fonte */
+    font-weight: bold; /* Texto em negrito */
+}
+
+.p-bold {
+    font-size: 20px; /* Tamanho da fonte */
+    font-weight: bold; /* Texto em negrito */
+    color: var(--main-color); /* Cor principal */
+}
+
+/* Estilo para a lista de horários cadastrados */
+ul.list-group {
+    background-color: #f5f5f5; /* Cor de fundo */
+    border-radius: 8px; /* Bordas arredondadas */
+    padding: 10px; /* Espaçamento interno */
+}
+
+/* Estilo para itens da lista */
+ul.list-group li {
+    background-color: transparent; /* Fundo transparente */
+    border: none; /* Remove bordas */
+    margin-bottom: 5px; /* Espaçamento entre itens */
+    padding: 8px 12px; /* Espaçamento interno dos itens */
+}
+
+/* Estilos para telas menores (responsividade para dispositivos móveis) */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px; /* Reduz o espaçamento interno */
+    }
+
+    .row {
+        display: flex; /* Define layout flexível */
+        flex-wrap: wrap; /* Permite quebra de linha entre colunas */
+        justify-content: center; /* Centraliza as colunas */
+        align-items: center; /* Centraliza verticalmente */
+    }
+
+    .row > div {
+        margin-bottom: 20px; /* Adiciona espaçamento entre colunas */
+    }
+
+    h2, h3 {
+        text-align: center; /* Centraliza os títulos */
+    }
+
+    form {
+        text-align: center; /* Centraliza o formulário */
+    }
+
+    ul.list-group {
+        padding: 0; /* Remove espaçamento interno */
+        text-align: center; /* Centraliza a lista */
+    }
+
+    ul.list-group li {
+        display: inline-block; /* Alinha os itens horizontalmente */
+        margin: 5px; /* Espaçamento entre itens */
+    }
+
+    .btn {
+        display: block; /* Botão ocupa uma nova linha */
+        width: 100%; /* Botão ocupa toda a largura disponível */
+    }
+
+    input[type="datetime-local"] {
+        width: 100%; /* Campo ocupa toda a largura do contêiner */
+    }
+}

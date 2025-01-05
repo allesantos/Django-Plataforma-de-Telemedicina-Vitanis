@@ -1,0 +1,48 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-color-dark fixed-top">
+    <!-- Barra de navegação fixa e estilizada -->
+    <div class="container-fluid">
+        <!-- Logo com redirecionamento condicional -->
+        <a class="navbar-brand" href="{% if is_medico %}{% url 'consultas_medico' %}{% else %}{% url 'home' %}{% endif %}">
+        <img src="{% static 'geral/img/logo.png' %}" width="60%" alt="">&nbspTOTAL CARE
+        </a>
+
+        <!-- Botão para alternar exibição em dispositivos móveis -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menu de navegação -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <!-- Links de navegação para usuários não médicos -->
+                {% if not is_medico %}  
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: #FFF;" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: #FFF;" href="{% url 'minhas_consultas' %}">Minhas consultas</a>
+                    </li>
+                {% endif %}
+                
+                <!-- Links de navegação para médicos -->
+                {% if is_medico %}
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: #FFF;" href="{% url 'abrir_horario' %}">Abrir Horários</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: #FFF;" href="{% url 'consultas_medico' %}">Ver Consultas</a>
+                    </li>
+                {% endif %}
+            </ul>
+
+            <!-- Botão de logout alinhado à direita -->
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link btn btn-danger text-white" href="{% url 'sair' %}" style="background-color: #09a6a3;padding: 5px 15px; border-radius: 5px;">Sair</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

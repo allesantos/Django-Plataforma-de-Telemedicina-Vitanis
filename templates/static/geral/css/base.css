@@ -1,0 +1,29 @@
+:root{
+    /* Definição de variáveis de cores principais */
+    --main-color: #00CCBE;
+    --dark-color: #09A6A3;
+    --contrast-color: #FFD686;
+}
+
+.bg-color-dark{
+    /* Define o fundo com a cor principal */
+    background-color: var(--main-color);
+}
+
+.p-bold{
+    /* Define texto em negrito e com a cor secundária */
+    font-weight: bold;
+    color: var(--dark-color);
+}
+
+/* Define texto com a cor secundária */
+.color-dark{
+    color: var(--dark-color);
+}
+
+.alert.fade-out {
+    /* Define estilo para transição suave de desaparecimento */  
+    opacity: 0; /* Invisível */
+    transition: opacity 0.5s ease; /* Transição de 0.5s */
+}
+

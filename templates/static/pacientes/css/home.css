@@ -1,0 +1,109 @@
+.container {
+    margin-top: 130px; /* Espaçamento superior do contêiner */
+}
+
+.p-bold {
+    font-size: 20px; /* Tamanho da fonte */
+    font-weight: bold; /* Negrito */
+}
+
+.especialidades {
+    font-size: 20px; /* Tamanho da fonte dos itens */
+    padding: 12px; /* Espaçamento interno */
+    border-radius: 8px; /* Bordas arredondadas */
+    display: flex; /* Exibição flexível */
+    flex-wrap: wrap; /* Permite quebra de linha */
+    justify-content: center; /* Centraliza os itens */
+    gap: 14px; /* Espaçamento entre itens */
+}
+
+.especialidade-item {
+    display: flex; /* Garante que o input e o badge fiquem lado a lado */
+    align-items: center; /* Alinha verticalmente o texto e o checkbox */
+    gap: 8px; /* Espaço entre o checkbox e o badge */
+    white-space: nowrap; /* Evita quebra de linha entre o checkbox e o texto */
+}
+
+.especialidades .badge {
+    background-color: #EAEAEA; /* Fundo do badge */
+    padding: 5px 20px; /* Espaçamento interno */
+    color: #666; /* Cor do texto */
+    font-size: 16px; /* Tamanho da fonte */
+}
+
+
+.card-medicos {
+    width: 80%; /* Largura do card */
+    background-color: #EAEAEA; /* Cor de fundo */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.4); /* Sombra para destaque */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animação de transição */
+    overflow: hidden; /* Oculta conteúdo excedente */
+    padding: 20px; /* Espaçamento interno */
+}
+
+/* Efeito ao passar o mouse no card */
+.card-medicos:hover {
+    transform: translateY(-5px); /* Elevação do card */
+}
+
+.foto-perfil-card {
+    width: 120px; /* Largura da imagem */
+    height: 120px; /* Altura da imagem */
+    border-radius: 90px; /* Deixa a imagem circular */
+}
+
+.icon-main {
+    color: var(--main-color); /* Cor principal para ícones */
+}
+
+.bg-main-lembrete {
+    background-color: var(--dark-color); /* Fundo escuro */
+    padding: 10px; /* Espaçamento interno */
+    color: white; /* Texto branco */
+}
+
+.btn-dark-color {
+    background-color: var(--dark-color); /* Fundo escuro */
+    border: none; /* Sem borda */
+    color: white; /* Texto branco */
+}
+
+.btn-dark-color-outline:hover {
+    background-color: var(--dark-color); /* Fundo escuro ao passar o mouse */
+    color: white; /* Texto branco */
+    border: none; /* Remove borda */
+}
+
+.icon-differential {
+    color: var(--contrast-color); /* Cor de contraste para ícones */
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding-left: 20px; /* Espaçamento lateral para telas pequenas */
+        padding-right: 20px; /* Espaçamento lateral para telas pequenas */
+        text-align: center; /* Centraliza o conteúdo */
+    }
+
+    .card-medicos {
+        margin: 0 auto; /* Centraliza os cards */
+    }
+
+    .foto-perfil-card {
+        display: block; /* Alinha no fluxo padrão */
+        margin: 0 auto; /* Centraliza a imagem */
+    }
+
+    .especialidades {
+        display: flex; /* Exibição flexível */
+        flex-wrap: wrap; /* Quebra de linha para itens */
+        justify-content: center; /* Centraliza os itens */
+        gap: 10px; /* Espaçamento entre os elementos */
+    }
+
+    .btn {
+        width: 100%; /* Botões ocupam toda a largura disponível */
+        margin-top: 10px; /* Espaçamento superior */
+    }
+}

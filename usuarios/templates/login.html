@@ -1,0 +1,66 @@
+{% extends "base.html" %} <!-- Extende o template base -->
+{% load static %} <!-- Carrega as tags estáticas para uso de arquivos estáticos -->
+
+{% block 'head' %}
+<!-- Inclui o arquivo CSS específico para usuários -->
+<link rel="stylesheet" href="{% static 'usuarios/css/usuarios.css' %}">
+{% endblock 'head' %}
+
+{% block 'body' %}
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Coluna esquerda com o formulário de login -->
+            <div class="col-md-6 col-12 d-flex justify-content-center">
+                <div class="cont-cadastro">
+                    <br><br>
+                    <!-- Exibe o logo e nome da aplicação -->
+                    <section class="cont-logo">
+                        <img class="logo" src="{% static 'geral/img/logo.png' %}">
+                        <label class="text-logo">TOTAL CARE</label>
+                    </section>
+                    <hr>
+
+                    <!-- Formulário de login -->
+                    <form action="{% url 'login' %}" method="POST" class="p-4">
+                        {% csrf_token %} <!-- Proteção contra CSRF -->
+                        <h2 class="fonte-destaque1 text-center">Logar</h2>
+
+                        {% if messages %} <!-- Exibe mensagens do sistema -->
+                            <br>
+                            {% for message in messages %}
+                                <section class="alert {{message.tags}}">
+                                    {{message}}
+                                </section>
+                            {% endfor %}
+                        {% endif %}
+
+                        <br>
+                        <!-- Campo para nome de usuário -->
+                        <div class="mb-3">
+                            <label for="" class="form-label" style="font-weight: 500">Usuário</label>
+                            <input type="text" name="username" id="" class="form-control" placeholder="Digite seu usuário...">
+                        </div>
+                        
+                        <!-- Campo para senha -->
+                        <div class="mb-3">
+                        <label for="" class="form-label" style="font-weight: 500">Senha</label>
+                        <input type="password" name="senha" class="form-control" placeholder="Digite sua senha ...">
+                        <br><br>
+                        </div>
+
+                        <!-- Botões de ação -->
+                        <div class="d-flex justify-content-center align-items-center gap-2">
+                            <input type="submit" value="Logar" class="btn btn-success btn-dark-color">
+                            <a href="{% url 'cadastro' %}" class="btn btn-dark-color-outline">Não possuo uma conta</a>
+                        </div>                      
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Coluna direita com uma ilustração -->
+            <div class="col-md-6 col-12 bg-main d-flex justify-content-center align-items-center">
+                <img src="{% static 'usuarios/img/ilustracao2.png' %}" alt="" class="img-fluid"/>
+            </div>
+        </div>
+    </div>
+{% endblock 'body' %}

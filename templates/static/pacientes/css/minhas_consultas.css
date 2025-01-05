@@ -1,0 +1,64 @@
+.container {
+    padding-top: 130px; /* Espaçamento superior do contêiner */
+}
+
+h2 {
+    margin-bottom: 40px; /* Espaçamento inferior do título */
+    font-size: 25px; /* Tamanho da fonte do título */
+    font-weight: bold; /* Negrito */
+}
+
+input {
+    margin-bottom: 20px; /* Espaçamento inferior dos inputs */
+}
+
+table {
+    border-collapse: collapse !important; /* Remove espaçamento entre bordas */
+    width: 100%; /* Tabela ocupa 100% da largura disponível */
+}
+
+table a {
+    font-weight: 500; /* Peso médio da fonte */
+    color: var(--dark-color); /* Cor do link */
+}
+
+table a:hover {
+    color: var(--main-color); /* Cor do link ao passar o mouse */
+}
+
+th, td {
+    padding: 8px; /* Espaçamento interno das células */
+    text-align: center; /* Centraliza o texto nas células */
+    background-color: #EAEAEA !important; /* Fundo cinza claro */
+}
+
+th {
+    background-color: #EAEAEA; /* Fundo para cabeçalhos */
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 130px 20px 20px 20px; /* Adiciona espaçamento nas laterais para telas menores */
+        text-align: center; /* Centraliza o conteúdo */
+    }
+
+    .row {
+        display: flex; /* Ativa layout flexível */
+        flex-direction: column; /* Alinha elementos em coluna */
+        align-items: center; /* Centraliza os itens */
+        gap: 15px; /* Espaçamento entre elementos */
+    }
+
+    .form-select, .form-control, .btn {
+        width: 100%; /* Ocupa toda a largura disponível */
+    }
+
+    .list-minhas-consultas table {
+        font-size: 14px; /* Reduz tamanho da fonte para melhor ajuste em telas menores */
+    }
+
+    .list-minhas-consultas table th, 
+    .list-minhas-consultas table td {
+        text-align: center; /* Centraliza texto nas células */
+    }
+}

@@ -1,0 +1,16 @@
+# Ignorar ambientes virtuais
+venv/
+.env
+
+# Arquivos de configuração locais
+*.pyc
+__pycache__/
+
+# Logs e caches
+*.log
+
+# Dados sensíveis
+.env
+
+# Configuração do VS Code
+.vscode/

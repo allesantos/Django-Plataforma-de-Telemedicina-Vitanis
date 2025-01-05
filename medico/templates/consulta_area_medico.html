@@ -1,0 +1,115 @@
+{% extends "base.html" %} <!-- Define que esta página herda o layout base -->
+{% load static %} <!-- Carrega a tag 'static' para acessar arquivos estáticos -->
+
+{% block 'head' %}
+ <!-- Estilos personalizados e ícones Bootstrap -->
+    <link rel="stylesheet" href="{% static 'medicos/css/consulta_area_medico.css' %}">      
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+{% endblock 'head' %}
+
+{% block 'body' %}
+    <!-- Navbar reutilizável incluída -->
+    {% include "partials/navbar.html" %}
+
+    <br><br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <!-- Alertas baseados no status da consulta -->
+                {% if consulta.status == 'C' %}
+                    <div class="alert alert-danger" role="alert">
+                        Consulta cancelada
+                    </div>
+                {% elif consulta.status == 'F' %}
+                    <div class="alert alert-success" role="alert">
+                        Consulta finalizada
+                    </div>
+                {% elif consulta.status == 'I' %}
+                    <div class="alert alert-primary" role="alert">
+                        Consulta inicializada, acesse o link imediatamente!
+                    </div>
+                {% endif %}
+
+                <!-- Exibição de mensagens de feedback -->
+                {% if messages %}
+                    <br>
+                    {% for message in messages %}
+                        <section class="alert {{message.tags}}">
+                            {{message}}
+                        </section>
+                    {% endfor %}
+                {% endif %}
+
+                 <!-- Informações do paciente e data da consulta -->
+                <div class="row">
+                    <div class="col-md">
+                        <h2 class="color-dark"><span style="color: #555;" >Paciente</span> {{consulta.paciente.username}} <i class="bi bi-patch-check-fill icon-main"></i></h2>
+                        <br>
+                        <p style="font-size: 18px;font-weight: 500">{{consulta.data_aberta.data}}</p>
+                    </div>
+                </div> 
+                <hr>
+                <br>
+
+                 <!-- Status da consulta -->
+                <div class="row">
+                    <div class="col-md">
+                        
+                        <p><i class="color-dark bi bi-check-circle-fill"></i> Consulta agendada</p>
+                    </div>
+                    <div class="col-md">
+                        <p><i class="{% if consulta.status == 'F' %}color-dark{% endif %} bi bi-check-circle-fill"></i> Consulta realizada</p>
+                    </div>
+                    <div class="col-md">
+                        <p><i class="bi bi-check-circle-fill"></i> Consulta Avaliada</p>
+                    </div>
+                </div>
+                <hr>
+
+                <!-- Detalhes da consulta -->
+                <h3 class="p-bold">Detalhes da consulta</h3>
+                <p style="font-size: 18px;font-weight: 500; margin-top: 20px;margin-bottom: 20px;">
+                    <i class="bi bi-calendar3 color-dark"></i>&nbsp Data: {{consulta.data_aberta.data}}
+                </p>
+                <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Consulta%20com%20Paciente%20{{consulta.paciente.username}}&dates={{consulta.data_aberta.data|date:'Ymd\\THis'}}/{{consulta.data_aberta.data|date:'Ymd\\THis'}}&details=Consulta%20agendada%20na%20plataforma.%20Detalhes:%20Valor%20{{dado_medico.valor_consulta}}&location={{consulta.localizacao}}&sf=true&output=xml" 
+                target="_blank" style="margin-bottom:15px;" class="btn btn-dark-color-outline">Adicione em seu calendário!</a>
+                <hr>
+
+                <!-- Acesso à consulta -->
+                <h3 class="p-bold" style="margin-bottom:20px;">Como acessar?</h3>
+                <p style="font-size: 18px;margin-bottom: 20px;">Adicione o link do Google Meet para iniciar a consulta:</p>
+                <form action="{% url 'consulta_area_medico' consulta.id %}" method="POST">{% csrf_token %}
+                    <input type="text" name="link" class="form-control shadow-main-color" id="" placeholder="Link ..." value="{% if consulta.link %}{{consulta.link}}{% endif %}">
+                    <br>
+                    <input style="margin-bottom: 20px;" type="submit" class="btn btn-success btn-dark-color" value="Iniciar Consulta">
+                </form>              
+                <hr>               
+                <br><br><br><br>
+            </div>
+
+            <div class="col-md">
+                <!-- Upload e listagem de documentos do paciente -->
+                <h3 class="p-bold" style="margin-bottom:20px;">Documentos do paciente</h3>
+                <form action="{% url 'add_documento' consulta.id %}" method="POST" enctype="multipart/form-data"> {% csrf_token %}
+                    <input type="text" name="titulo" class="form-control" placeholder="Titulo ...">
+                    <br>
+                    <input type="file" name="documento" class="form-control">
+                    <br>
+                    <input type="submit" class="btn btn-dark-color-outline btn-lg" value="+">
+                </form>
+                <hr>
+                <br>
+                {% for documento in documentos %}
+                <a href="{{documento.documento.url}}" class="link documentos"><i class="bi bi-file-arrow-down"></i>{{documento.titulo}} - {{documento.consulta.data_aberta.data.year}}</a>
+                <br><br><br>
+                {% endfor %}
+                <br>
+                <hr>
+
+                <!-- Botão para finalizar consulta -->
+                <a style="margin-top:20px;" href="{% url 'finalizar_consulta' consulta.id %}" class="btn btn-success">Finalizar consulta</a>
+            </div>
+        </div>      
+    </div>
+
+{% endblock 'body' %}

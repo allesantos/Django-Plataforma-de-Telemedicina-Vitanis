@@ -1,0 +1,94 @@
+{% extends "base.html" %} <!-- Define que esta página herda o layout base -->
+{% load static %} <!-- Carrega a tag 'static' para acessar arquivos estáticos -->
+
+{% block 'head' %}
+<!-- Importa os estilos específicos da página e ícones do Bootstrap -->
+<link rel="stylesheet" href="{% static 'pacientes/css/consulta.css' %}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+{% endblock 'head' %}
+
+{% block 'body' %}
+<!-- Navbar reutilizável incluída -->
+{% include "partials/navbar.html" %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <!-- Exibe alertas de status da consulta -->
+            {% if consulta.status == 'C' %}
+            <div class="alert alert-danger" role="alert">
+                Consulta cancelada
+            </div>
+            {% elif consulta.status == 'F' %}
+            <div class="alert alert-success" role="alert">
+                Consulta finalizada
+            </div>
+            {% elif consulta.status == 'I' %}
+            <div class="alert alert-primary" role="alert">
+                Consulta inicializada, acesse o link imediatamente!
+            </div>
+            {% endif %}
+            
+            <div class="row">
+                <!-- Exibe a foto do médico -->
+                <div class="col-md-3"><img src="{{dado_medico.foto.url}}" class="foto-perfil" alt=""></div>
+                <div class="col-md">
+                    <!-- Nome e prefixo do médico -->
+                    <p style="font-size: 25px;" class="p-bold">
+                        <span style="color: #555;">{{ prefixo }}</span> {{ dado_medico.nome }}
+                        <i class="bi bi-patch-check-fill icon-main"></i></p>
+                    <!-- Descrição e data da consulta -->
+                    <p style="font-size: 18px;">{{dado_medico.descricao}}</p>
+                    <p style="font-size: 18px;font-weight: 500">{{consulta.data_aberta.data}}</p>
+                    <!-- Botão para cancelar a consulta -->
+                    <a href="{% url 'cancelar_consulta' consulta.id %}" class="btn btn-danger" style="margin-top:15px;margin-bottom: 25px;" >Cancelar consulta</a>
+                </div>
+            </div>
+            <hr>
+            <br>
+            <div class="row">
+                <div class="col-md">
+                    <!-- Indicadores de progresso da consulta -->
+                    <p><i class="color-dark bi bi-check-circle-fill"></i> Consulta agendada</p>
+                </div>
+                <div class="col-md">
+                    <p><i class="{% if consulta.status == 'F' %}color-dark{% endif %} bi bi-check-circle-fill"></i>
+                        Consulta realizada</p>
+                </div>
+                <div class="col-md">
+                    <p><i class="bi bi-check-circle-fill"></i> Consulta Avaliada</p>
+                </div>
+            </div>
+            <hr>
+            <!-- Detalhes adicionais da consulta -->
+            <h3 class="p-bold">Detalhes da consulta</h3>
+            <p style="font-size: 18px;font-weight: 500; margin-top: 20px;"><i class="bi bi-calendar3 color-dark"></i>&nbsp Data: {{consulta.data_aberta.data}}</p>
+            <p style="font-size: 18px;font-weight: 500;margin-bottom: 20px;"><i class="bi bi-tag-fill color-dark"></i></i>&nbsp Valor: R$
+                {{dado_medico.valor_consulta}}</p>
+            <!-- Link para adicionar a consulta ao Google Calendar -->
+            <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Consulta%20com%20Dr(a).%20{{dado_medico.nome}}&dates={{consulta.data_aberta.data|date:'Ymd\\THis'}}/{{consulta.data_aberta.data|date:'Ymd\\THis'}}&details=Consulta%20marcada%20na%20plataforma&location={{consulta.localizacao}}&sf=true&output=xml" 
+            target="_blank"  style="margin-bottom:20px;" class="btn btn-dark-color-outline">Adicione em seu calendário!</a>
+            <hr>
+            <!-- Instruções de acesso à consulta -->
+            <h3 class="p-bold" style="margin-bottom:20px;">Como acessar ?</h3>
+            <p style="font-size: 18px;margin-bottom: 20px;">No horário da consulta acesse o link disponível abaixo:</p>
+
+            {% if consulta.status == 'I' and consulta.link %}
+            <a style="margin-bottom: 20px;" href="{{consulta.link}}" class="btn btn-success btn-dark-color">Acessar consulta</a>
+            {% else %}
+            <a style="margin-bottom: 20px;" href="#" class="btn btn-success btn-dark-color disabled">Acessar consulta</a>
+            {% endif %}
+            <hr>
+            <!-- Documentos relacionados à consulta -->
+            <h3 style="margin-bottom: 20px;" class="p-bold">Meus documentos</h3>
+            <br>
+            {% for documento in documentos %}
+                <a href="{{documento.documento.url}}" class="link documentos"><i class="bi bi-file-arrow-down"></i>{{documento.titulo}} - {{documento.consulta.data_aberta.data.year}}</a>
+                <br><br><br>
+                {% endfor %}
+            <br><br><br><br>
+        </div>     
+    </div>
+</div>
+
+{% endblock 'body' %}

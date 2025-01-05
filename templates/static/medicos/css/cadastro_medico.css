@@ -1,0 +1,54 @@
+body {
+    padding-top: 100px; /* Adiciona espaçamento no topo do body */
+    margin: 0; /* Remove margens externas do body */
+}
+
+.shadow-main-color {
+    box-shadow: 1px 1px 5px 1px rgba(0, 204, 190, .4); /* Sombra com a cor principal */
+}
+
+form {
+    margin-top: 20px; /* Espaçamento acima do formulário */
+    margin-bottom: 20px; /* Espaçamento abaixo do formulário */
+}
+
+label {
+    font-weight: 500; /* Peso intermediário para o texto do rótulo */
+    margin-bottom: 10px; /* Espaçamento abaixo do rótulo */
+}
+
+.btn {
+    border: none; /* Remove bordas dos botões */
+}
+
+/* Estilos para telas menores que 768px */
+@media (max-width: 768px) {
+    .container {
+        padding: 0px 20px 20px 20px; /* Adiciona espaçamento nas laterais e na parte inferior */
+        text-align: center; /* Centraliza o conteúdo */
+    }
+
+    .row {
+        flex-direction: column; /* Alinha os elementos verticalmente */
+        text-align: center; /* Centraliza os textos */
+    }
+
+    label {
+        text-align: left; /* Alinha o texto do rótulo à esquerda */
+        display: block; /* Garante que o rótulo fique acima do campo */
+    }
+
+    input, select, textarea, .btn {
+        width: 90%; /* Ajusta a largura dos campos e botões */
+        margin: 10px auto; /* Centraliza e adiciona espaçamento */
+    }
+
+    .btn {
+        display: block; /* Faz o botão ocupar uma nova linha */
+        width: 100%; /* O botão ocupa toda a largura disponível */
+    }
+
+    h2, .p-bold {
+        font-size: 20px; /* Reduz o tamanho da fonte para títulos */
+    }
+}

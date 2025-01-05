@@ -1,0 +1,175 @@
+.container {
+    padding-top: 140px; /* Espaçamento superior para o contêiner */
+}
+
+h2, h4 {
+    margin-bottom: 20px; /* Espaçamento inferior para títulos */
+    font-size: 25px; /* Tamanho da fonte para títulos */
+    font-weight: bold; /* Negrito nos títulos */
+}
+
+/* Estilo da foto do médico */
+.foto-perfil {
+    width: 160px; /* Largura da imagem */
+    height: 160px; /* Altura da imagem */
+    border-radius: 50%; /* Formato circular */
+    border: 2px solid var(--main-color); /* Borda com a cor principal */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Estilo do texto destacado */
+.p-bold {
+    font-size: 20px; /* Tamanho da fonte */
+    font-weight: bold; /* Texto em negrito */
+}
+
+/* Botão com cor escura */
+.btn-dark-color {
+    background-color: var(--dark-color); /* Cor de fundo escura */
+    border: none; /* Remove bordas */
+    color: white; /* Texto branco */
+}
+
+/* Botão com borda escura */
+.btn-dark-color-outline {
+    border: 1px solid var(--dark-color); /* Borda escura */
+    color: var(--dark-color); /* Texto com a mesma cor da borda */
+}
+
+/* Estilo ao passar o mouse no botão com borda escura */
+.btn-dark-color-outline:hover {
+    background-color: var(--dark-color); /* Cor de fundo escura */
+    color: white; /* Texto branco */
+    border: none; /* Remove a borda */
+}
+
+/* Ícones com cor de contraste */
+.icon-differential {
+    color: var(--contrast-color); /* Cor de destaque */
+}
+
+/* Estilo da tabela */
+table {
+    border-collapse: collapse !important; /* Remove espaçamento entre bordas */
+    width: 100%; /* Largura total */
+}
+
+th, td {
+    padding: 8px; /* Espaçamento interno nas células */
+    text-align: center; /* Centraliza o conteúdo */
+    background-color: #EAEAEA !important; /* Fundo cinza claro */
+}
+
+th {
+    background-color: #EAEAEA; /* Fundo para cabeçalhos */
+}
+
+/* Links sem sublinhado */
+.link {
+    text-decoration: none; /* Remove sublinhado */
+}
+
+/* Estilo para botão de envio */
+input[type="submit"] {
+    border: none; /* Remove bordas */
+    outline: none; /* Remove contorno padrão */
+}
+
+/* Estilo para data atual */
+.today {
+    background-color: var(--dark-color); /* Fundo escuro */
+}
+
+/* Estilo para selecionar dia */
+.selecionar-dia {
+    width: 100%; /* Largura total */
+    background-color: #EAEAEA; /* Fundo cinza claro */
+    box-shadow: 1px 1px 10px gray; /* Sombra */
+}
+
+/* Cabeçalho de dias */
+.header-dias {
+    background-color: var(--dark-color); /* Fundo escuro */
+    padding: 15px; /* Espaçamento interno */
+    color: white; /* Texto branco */
+    text-decoration: none; /* Remove sublinhado */
+}
+
+/* Texto do dia da semana */
+.dia-semana {
+    float: right; /* Alinha à direita */
+}
+
+/* Texto de conteúdo relacionado a datas */
+.conteudo-data {
+    padding: 15px; /* Espaçamento interno */
+    color: black; /* Texto preto */
+}
+
+/* Links sem sublinhado ao passar o mouse */
+.link:hover {
+    text-decoration: none; /* Remove sublinhado */
+}
+
+/* Lista de consultas */
+.list-minhas-consultas {
+    background-color: #EAEAEA; /* Fundo cinza claro */
+    padding: 10px; /* Espaçamento interno */
+}
+
+/* Estilo para documentos */
+.documentos {
+    background-color: #cfcfcf; /* Fundo cinza médio */
+    color: black; /* Texto preto */
+    padding: 15px; /* Espaçamento interno */
+    border-radius: 10px; /* Bordas arredondadas */
+    font-size: 15px; /* Tamanho da fonte */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .container {
+        padding: 140px 20px 20px 20px; /* Espaçamento superior e laterais */
+        text-align: center; /* Centraliza o conteúdo */
+    }
+
+    .foto-perfil {
+        display: block; /* Alinha a imagem no fluxo */
+        margin: 0 auto; /* Centraliza a imagem */
+        width: 100px; /* Reduz o tamanho */
+        height: auto; /* Ajusta altura proporcionalmente */
+    }
+
+    .row {
+        display: flex;
+        flex-direction: column; /* Alinha itens em coluna */
+        gap: 15px; /* Espaçamento entre os itens */
+    }
+
+    .btn {
+        width: 100%; /* Botão ocupa toda a largura */
+        margin-top: 10px; /* Espaçamento superior */
+    }
+
+    h2, h3 {
+        font-size: 20px; /* Reduz tamanho dos títulos */
+    }
+
+    .alert {
+        font-size: 14px; /* Ajusta tamanho para mensagens */
+    }
+
+    .documentos {
+        display: block; /* Ajusta exibição */
+        margin: 10px 0; /* Espaçamento vertical */
+        font-size: 16px; /* Ajusta tamanho da fonte */
+    }
+
+    table {
+        font-size: 14px; /* Reduz fonte da tabela */
+    }
+
+    p {
+        font-size: 16px; /* Ajusta fonte para legibilidade */
+    }
+}

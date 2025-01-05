@@ -1,0 +1,117 @@
+{% extends "base.html" %} <!-- Define que esta página herda o layout base -->
+{% load static %} <!-- Carrega a tag 'static' para acessar arquivos estáticos -->
+
+{% block 'head' %}
+ <!-- Estilos personalizados e ícones Bootstrap -->
+<link rel="stylesheet" href="{% static 'medicos/css/cadastro_medico.css' %}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+{% endblock 'head' %}
+
+{% block 'body' %}
+
+{% include "partials/navbar.html" %}
+<!-- Navbar reutilizável incluída -->
+
+<div class="container">
+    <br><br>
+    <div class="row">
+        <div class="col-md-8">
+             <!-- Saudação personalizada com o nome do usuário -->
+        <label style="margin-left: 30px;margin-bottom:40px; font-size: 25px" class="p-bold">
+            <span class="color-dark" style="color: #555";>Olá,</span>
+            {{request.user.username}},
+            <span class="color-dark" style="color: #555";>
+                vamos realizar seu cadastro médico legal.
+            </span>
+        </label>
+
+             <!-- Exibição de mensagens de feedback -->
+            {% if messages %}
+            <br>
+            {% for message in messages %}
+            <section class="alert {{message.tags}}">
+                {{message}}
+            </section>
+            {% endfor %}
+            {% endif %}
+            
+            <!-- Formulário de cadastro médico -->
+            <form action="{% url 'cadastro_medico' %}" method="post" enctype='multipart/form-data'>{% csrf_token %}
+                <div class="row">
+                    <div class="col-md">
+                        <!-- Campo para o CRM -->
+                        <label for="">CRM:</label>
+                        <input type="text" class="form-control shadow-main-color" name="crm" placeholder="CRM...">
+                    </div>
+                    <!-- Upload de cédula de identidade médica -->
+                    <div class="col-md">
+                        <label for="">Cédula de identidade médica:</label>
+                        <input type="file" name="cim" id="" class="form-control shadow-main-color">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                     <!-- Nome completo -->
+                    <div class="col-md">
+                        <label style="font-weight: 500;" for="">Nome completo:</label>
+                        <input type="text" class="form-control shadow-main-color" name="nome"
+                            placeholder="Digite seu nome completo ...">
+                    </div>
+                    <!-- CEP -->
+                    <div class="col-md">
+                        <label for="">CEP:</label>
+                        <input type="text" name="cep" id="" class="form-control shadow-main-color" placeholder="Digite o seu CEP ...">
+                    </div>
+                </div>
+                <br>
+                <!-- Rua -->
+                <label for="">Rua:</label>
+                <input type="text" name="rua" id="" class="form-control shadow-main-color" placeholder="Endereço ...">
+                <br>
+                <div class="row">
+                    <!-- Bairro -->
+                    <div class="col-md">
+                        <label style="font-weight: 500;" for="">Bairro:</label>
+                        <input type="text" class="form-control shadow-main-color" name="bairro"
+                            placeholder="Digite o seu bairro ...">
+                    </div>
+                    <!-- Número da residência -->
+                    <div class="col-md">
+                        <label for="">Número:</label>
+                        <input type="number" name="numero" id="" class="form-control shadow-main-color" placeholder="Número da sua residência ...">
+                    </div>
+                </div>
+                <br>
+                <!-- Upload de RG -->
+                <label for="">RG:</label>
+                <input type="file" name="rg" id="" class="form-control shadow-main-color">
+                <br>
+                <!-- Foto de perfil -->
+                <label for="">Foto de perfil:</label>
+                <input type="file" name="foto" id="" class="form-control shadow-main-color">
+                <br>
+                <!-- Especialidade médica -->
+                <label for="">Especialidade médica:</label>
+                <select name="especialidade" class="form-select" id="">
+                    <option value="">Selecione uma especialidade</option>
+                    {% for i in especialidades %}
+                    <option value="{{i.id}}">{{i.especialidade}}</option>
+                    {% endfor %}
+                </select>
+                <br>
+                <!-- Descrição sobre o médico -->
+                <label for="">Descrição:</label>
+                <textarea name="descricao" class="form-control shadow-main-color" placeholder="Descreva aqui sobre sua especialidade ..."></textarea>
+                <br>
+                <!-- Valor da consulta -->
+                <label for="">Valor consulta:</label>
+                <input type="number" name="valor_consulta" class="form-control shadow-main-color" placeholder="Digite aqui o valor da sua consulta ...">
+                <br>
+                <!-- Botão de envio -->
+                <input type="submit" value="Cadastre-se" class="btn btn-success btn-dark-color">
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock 'body' %}

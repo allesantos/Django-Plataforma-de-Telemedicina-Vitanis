@@ -1,0 +1,61 @@
+{% extends "base.html" %}   <!-- Define que esta página herda o layout base -->
+{% load static %}           <!-- Carrega a tag 'static' para acessar arquivos estáticos -->
+
+{% block 'head' %}
+<!-- Estilos personalizados -->
+<link rel="stylesheet" href="{% static 'medicos/css/abrir_horario.css' %}"> 
+<link rel="stylesheet" href="{% static 'usuarios/css/usuarios.css' %}"> 
+<link rel="stylesheet" href="{% static 'medicos/css/cadastro_medico.css' %}">
+{% endblock 'head' %}
+
+
+{% block 'body' %}
+
+{% include "partials/navbar.html" %} <!-- Navbar reutilizável incluída -->
+
+<div class="container">
+    <br><br>
+    <div class="row"> 
+        <div class="col-md-8">
+
+            <!-- Exibição de mensagens de feedback -->
+            {% if messages %}
+            <br>
+            {% for message in messages %} 
+            <section class="alert {{message.tags}}">
+                {{message}}
+            </section>
+            {% endfor %}
+            {% endif %}
+            <br>
+
+            <!-- Título da seção -->
+            <h2><span class="color-dark">Abrir horários para consultas</span></h2>
+            
+            <hr>
+
+            <!-- Formulário para cadastro de novos horários -->
+            <form action="{% url 'abrir_horario' %}" method="POST">{% csrf_token %}
+                <label style="margin-top:20px;margin-bottom:20px" for="">Escolher data:</label>
+                <!-- Campo para escolher data e hora -->
+                <input type="datetime-local" name="data" class="form-control shadow-main-color">
+                <br>
+                <!-- Botão de envio -->
+                <input style="border:none" type="submit" value="Salvar" class="btn btn-success btn-dark-color">
+            </form>
+        </div>
+
+        <div class="col-md-4">
+            <!-- Título da seção -->
+            <h3 class="p-bold" style="margin-bottom:20px;">Seus horários:</h3>     
+            <!-- Lista dos horários já cadastrados -->
+            <ul class="list-group">
+                {% for data in datas_abertas %} <!-- Itera sobre os horários disponíveis -->
+                <li class="list-group-item">{{data}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% endblock 'body' %}

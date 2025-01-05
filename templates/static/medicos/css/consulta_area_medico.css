@@ -1,0 +1,145 @@
+.container {
+    padding-top: 120px; /* Espaçamento superior no contêiner */
+}
+
+.p-bold {
+    font-size: 20px; /* Define o tamanho da fonte */
+    font-weight: bold; /* Texto em negrito */
+}
+
+h2, h4 {
+    margin-bottom: 20px; /* Espaço abaixo dos títulos */
+    font-size: 25px; /* Tamanho da fonte dos títulos */
+    font-weight: bold; /* Texto em negrito */
+}
+
+.btn-dark-color {
+    background-color: var(--dark-color); /* Fundo com cor secundária */
+    color: white; /* Texto branco */
+}
+
+.btn-dark-color-outline {
+    border: 1px solid var(--dark-color); /* Borda com cor secundária */
+    color: var(--dark-color); /* Texto com cor secundária */
+}
+
+.btn-dark-color-outline:hover {
+    background-color: var(--dark-color); /* Fundo muda para cor secundária */
+    color: white; /* Texto branco ao passar o mouse */
+    border: 1px solid var(--dark-color); /* Mantém a borda */
+}
+
+.icon-differential {
+    color: var(--contrast-color); /* Cor de contraste para ícones */
+}
+
+table {
+    border-collapse: collapse !important; /* Remove espaçamento entre bordas */
+    width: 100%; /* Tabela ocupa toda a largura */
+}
+
+th, td {
+    padding: 8px; /* Espaçamento interno */
+    text-align: center; /* Centraliza o texto */
+    background-color: #EAEAEA !important; /* Fundo cinza claro */
+}
+
+th {
+    background-color: #EAEAEA; /* Fundo específico para cabeçalhos */
+}
+
+.link {
+    text-decoration: none; /* Remove sublinhado dos links */
+}
+
+input[type="submit"] {
+    border: none; /* Remove borda padrão */
+    outline: none; /* Remove contorno ao focar */
+}
+
+.today {
+    background-color: var(--dark-color); /* Destaque para o dia atual */
+}
+
+.selecionar-dia {
+    width: 100%; /* Largura total */
+    background-color: #EAEAEA; /* Fundo cinza claro */
+    box-shadow: 1px 1px 10px gray; /* Sombra cinza */
+}
+
+.header-dias {
+    background-color: var(--dark-color); /* Fundo com cor secundária */
+    padding: 15px; /* Espaçamento interno */
+    color: white; /* Texto branco */
+    text-decoration: none; /* Remove sublinhado */
+}
+
+.dia-semana {
+    float: right; /* Alinha à direita */
+}
+
+.link:hover {
+    text-decoration: none; /* Mantém o link sem sublinhado ao passar o mouse */
+}
+
+.list-minhas-consultas {
+    background-color: #EAEAEA; /* Fundo cinza claro */
+    padding: 10px; /* Espaçamento interno */
+}
+
+.documentos {
+    background-color: #cfcfcf; /* Fundo cinza médio */
+    color: black; /* Texto preto */
+    padding: 15px; /* Espaçamento interno */
+    border-radius: 10px; /* Bordas arredondadas */
+    font-size: 15px; /* Tamanho da fonte */
+}
+
+/* Estilos para telas menores que 768px */
+@media (max-width: 768px) {
+    .container {
+        padding: 120px 20px 10px 20px; /* Adiciona espaçamento nas laterais */
+        text-align: center; /* Centraliza o conteúdo */
+    }
+
+    h2.color-dark {
+        font-size: 22px; /* Reduz o tamanho da fonte do título */
+        text-align: center; /* Centraliza o título */
+    }
+
+    p {
+        text-align: center; /* Centraliza os parágrafos */
+    }
+
+    form {
+        margin: 0 auto; /* Centraliza o formulário */
+        text-align: center; /* Centraliza o texto do formulário */
+    }
+
+    .btn {
+        display: block; /* Botões ocupam uma nova linha */
+        margin: 10px auto; /* Adiciona margem vertical */
+    }
+
+    input[type="text"] {
+        width: 90%; /* Reduz largura dos campos de texto */
+        margin: 0 auto; /* Centraliza os campos */
+        text-align: center; /* Centraliza o texto nos campos */
+    }
+
+    .documentos {
+        display: block; /* Exibe como bloco */
+        margin: 10px auto; /* Centraliza e adiciona margem */
+        text-align: center; /* Centraliza o conteúdo */
+    }
+
+    .row p {
+        text-align: center; /* Centraliza os parágrafos */
+    }
+
+    .btn-success {
+        display: block; /* Exibe o botão como bloco */
+        margin: 20px auto; /* Centraliza e adiciona margem vertical */
+        width: 80%; /* Reduz largura do botão */
+    }
+}

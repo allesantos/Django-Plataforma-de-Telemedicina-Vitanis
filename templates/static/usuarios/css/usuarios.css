@@ -1,0 +1,62 @@
+/* Comportamento padrão para todas as telas */
+.bg-main {
+    height: auto; /* Altura ajustável para adaptação em telas menores */
+    width: 100%; /* Ocupa toda a largura do contêiner */
+    padding: 20px; /* Espaçamento interno para melhor organização */
+    display: flex; /* Define layout flexível para centralização */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo */
+    align-items: center; /* Centraliza verticalmente o conteúdo */
+    background-size: contain; /* Ajusta o tamanho da imagem ao contêiner */
+    background-repeat: no-repeat; /* Evita repetição da imagem */
+    background-position: center; /* Centraliza a imagem de fundo */
+}
+
+/* Ajustar o contêiner do cadastro */
+.cont-cadastro {
+    width: 100%; /* Contêiner ocupa toda a largura disponível */
+    max-width: 500px; /* Define uma largura máxima para manter o layout consistente */
+    padding: 20px; /* Adiciona espaçamento interno */
+}
+
+.cont-logo {
+    text-align: center; /* Centraliza o logo no contêiner */
+}
+
+.fonte-destaque1 {
+    color: var(--dark-color); /* Define a cor personalizada */
+}
+
+.btn-dark-color {
+    background-color: var(--dark-color); /* Define o fundo para botões principais */
+    color: white; /* Texto branco para contraste */
+}
+
+.btn-dark-color-outline {
+    border: 1px solid var(--dark-color); /* Borda destacada */
+    color: var(--dark-color); /* Texto com cor personalizada */
+}
+
+.btn-dark-color-outline:hover {
+    background-color: var(--dark-color); /* Fundo destacado ao passar o mouse */
+    color: white; /* Texto branco ao passar o mouse */
+    border: 1px solid var(--dark-color); /* Mantém a borda destacada */
+}
+
+/* Centralizar o logo em telas menores */
+@media (max-width: 768px) {
+    .cont-logo img {
+        max-width: 80%; /* Reduz o tamanho do logo para melhor encaixe */
+    }
+}
+
+/* Ajuste para telas maiores que 768px */
+@media (min-width: 768px) {
+    .bg-main {
+        height: 100vh; /* Altura ocupa 100% da viewport */
+        width: 50%; /* Largura ocupa metade da tela */
+        padding: 0; /* Remove espaçamento adicional */
+        background-size: cover; /* Imagem cobre a área do contêiner sem deformar */
+        background-repeat: no-repeat; /* Evita repetição da imagem de fundo */
+        background-position: center; /* Centraliza a imagem de fundo */
+    }
+}

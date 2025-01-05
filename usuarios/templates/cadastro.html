@@ -1,0 +1,86 @@
+{% extends "base.html" %} <!-- Extende o template base -->
+{% load static %} <!-- Carrega as tags estáticas para uso de arquivos estáticos -->
+
+{% block 'head' %} 
+<!-- Inclui o arquivo CSS específico para usuários -->
+<link rel="stylesheet" href="{% static 'usuarios/css/usuarios.css' %}" />
+{% endblock 'head' %}
+
+{% block 'body' %}
+<div class="container-fluid">
+  <div class="row">
+    <!-- Coluna esquerda com o formulário de cadastro -->
+    <div class="col-md-6 col-12 d-flex justify-content-center">
+      <div class="cont-cadastro">
+        <br /><br />
+        <!-- Logo da aplicação -->
+        <section class="cont-logo">
+          <img class="logo" src="{% static 'geral/img/logo.png' %}" />
+          <label class="text-logo">TOTAL CARE</label>
+        </section>
+        <hr />
+
+        <!-- Formulário de cadastro -->
+        <form action="{% url 'cadastro' %}" method="post" class="p-4">
+        {% csrf_token %} <!-- Proteção contra CSRF -->
+        
+          <h2 class="fonte-destaque1 text-center">Cadastre-se</h2>
+
+          {% if messages %} <!-- Exibe mensagens do sistema -->
+          <br />
+          {% for message in messages %}
+          <section class="alert {{message.tags}}">{{message}}</section>
+          {% endfor %} {% endif %}
+
+          <br />
+           <!-- Campo para nome de usuário -->
+           <div class="mb-3">
+            <label for="username" class="form-label" style="font-weight: 500">Usuário</label>
+            <input type="text" name="username" id="username" class="form-control" placeholder="Crie o seu usuário..." />
+          </div>
+
+          <!-- Campo para e-mail -->
+          <div class="mb-3">
+            <label for="email" class="form-label" style="font-weight: 500">E-mail</label>
+            <input type="email" name="email" id="email" placeholder="email@email.com" class="form-control" />
+          </div>
+
+          <div class="row">
+            <!-- Campo para senha -->
+            <div class="col-md-6 mb-3">
+              <label for="senha" class="form-label" style="font-weight: 500">Senha</label>
+              <input type="password" name="senha" class="form-control" placeholder="Digite sua senha ..." />
+            </div>
+
+            <!-- Campo para confirmar senha -->
+            <div class="col-md-6 mb-3">
+              <label for="confirmar_senha" class="form-label" style="font-weight: 500">Confirmar senha</label>
+              <input type="password" name="confirmar_senha" class="form-control" placeholder="Confirme sua senha..." />
+              <br />
+            </div>
+
+            <!-- Campo checkbox para indicar se é médico -->
+            <div class="mb-3">
+              <label for="is_medico" class="form-label" style="font-weight: 500">Você é médico?&nbsp;&nbsp;</label>
+              <input type="checkbox" name="is_medico" id="is_medico" class="form-check-input">
+            </div>
+          </div>
+          
+          <!-- Botões de ação -->
+          <div class="d-flex justify-content-center align-items-center gap-2" style="margin-top:15px;">
+            <input type="submit" value="Cadastrar" class="btn btn-success btn-dark-color"/>
+            <a href="{% url 'login' %}" class="btn btn-dark-color-outline">Já possuo uma conta</a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Coluna direita com a ilustração -->
+    <div class="col-md-6 col-12 bg-main d-flex justify-content-center align-items-center">
+      <img src="{% static 'usuarios/img/ilustracao.png' %}" alt="" class="img-fluid"/>
+    </div>
+
+  </div>
+</div>
+
+{% endblock 'body' %}

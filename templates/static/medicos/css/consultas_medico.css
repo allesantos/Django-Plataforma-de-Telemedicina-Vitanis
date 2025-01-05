@@ -1,0 +1,95 @@
+.container {
+    padding-top: 150px; /* Espaçamento superior para o contêiner */
+}
+
+h2 {
+    font-size: 25px; /* Define o tamanho da fonte dos títulos */
+}
+
+.foto-perfil {
+    width: 160px; /* Largura da imagem do perfil */
+    height: 160px; /* Altura da imagem do perfil */
+    border-radius: 50%; /* Deixa a imagem circular */
+    border: 2px solid var(--main-color); /* Borda com a cor principal */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona sombra suave */
+    margin-right: 30px; /* Espaçamento à direita */
+}
+
+table {
+    border-collapse: collapse !important; /* Remove espaçamento entre bordas */
+    width: 100%; /* Faz a tabela ocupar toda a largura do contêiner */
+}
+
+table a {
+    font-weight: 500; /* Define peso intermediário para o texto dos links */
+    color: var(--dark-color); /* Cor dos links */
+}
+
+table a:hover {
+    color: var(--main-color); /* Cor dos links ao passar o mouse */
+}
+
+th, td {
+    padding: 8px; /* Adiciona espaçamento interno às células */
+    text-align: center; /* Centraliza o conteúdo das células */
+    background-color: #EAEAEA !important; /* Fundo cinza claro */
+}
+
+th {
+    background-color: #EAEAEA; /* Fundo para os cabeçalhos */
+}
+
+/* Estilos para telas menores que 768px */
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%; /* Reduz a largura do contêiner */
+        margin: auto; /* Centraliza o contêiner horizontalmente */
+        padding: 120px 10px 10px 10px; /* Adiciona espaçamento ao contêiner */
+        text-align: center; /* Centraliza o conteúdo */
+    }
+
+    .foto-perfil {
+        display: block; /* Centraliza a imagem no fluxo */
+        margin: 20px auto; /* Adiciona margem para centralizar */
+        max-width: 150px; /* Define a largura máxima da imagem */
+        height: auto; /* Ajusta proporcionalmente a altura */
+        border-radius: 50%; /* Mantém o formato circular */
+    }
+
+    label.p-bold {
+        font-size: 18px; /* Reduz o tamanho da fonte */
+        color: #555; /* Define cor para o texto */
+        text-align: center; /* Centraliza o texto */
+        display: inline-block; /* Garante que o texto seja exibido em linha */
+        line-height: 1.5; /* Ajusta o espaçamento entre linhas */
+    }
+
+    h2 {
+        font-size: 22px; /* Reduz o tamanho do título */
+        text-align: center; /* Centraliza o título */
+    }
+
+    h4 {
+        font-size: 20px; /* Reduz o tamanho dos subtítulos */
+        text-align: center; /* Centraliza os subtítulos */
+    }
+
+    .list-minhas-consultas {
+        margin-top: 20px; /* Espaçamento superior para a lista */
+    }
+
+    .list-minhas-consultas table {
+        width: 100%; /* Tabela ocupa a largura total do contêiner */
+        font-size: 14px; /* Reduz o tamanho da fonte */
+    }
+
+    .list-minhas-consultas table thead th {
+        font-size: 16px; /* Define o tamanho da fonte dos cabeçalhos */
+        text-align: center; /* Centraliza os cabeçalhos */
+    }
+
+    .list-minhas-consultas table tbody td {
+        text-align: center; /* Centraliza o conteúdo das células */
+        padding: 10px 5px; /* Ajusta o espaçamento interno */
+    }
+}

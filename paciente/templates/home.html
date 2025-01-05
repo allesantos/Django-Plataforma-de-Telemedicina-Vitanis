@@ -1,0 +1,90 @@
+{% extends "base.html" %} <!-- Define que esta página herda o layout base -->
+{% load static %} <!-- Carrega a tag 'static' para acessar arquivos estáticos -->
+
+{% block 'head' %}
+<!-- Importa os estilos específicos da página e ícones do Bootstrap -->
+<link rel="stylesheet" href="{% static 'pacientes/css/home.css' %}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+{% endblock 'head' %}
+
+{% block 'body' %}
+<!-- Navbar reutilizável incluída -->
+{% include "partials/navbar.html" %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <!-- Saudação personalizada para o médico ou usuário logado -->
+            <p style="font-size: 25px;" class="p-bold">
+                {% if medico_logado %}
+                    <span style="color: #555;">Olá,
+                        {{ prefixo_medico_logado }}
+                        <i class="bi bi-patch-check-fill icon-main"></i>
+                    </span>
+                    {{ medico_logado.nome }}
+                {% else %}
+                    <span style="color: #555;">
+                        Bem-vindo(a),
+                    </span> 
+                    {{ usuario_logado }}
+                {% endif %}                    
+            </p>
+            <br>
+
+            <!-- Formulário de busca por médicos com filtros de especialidade -->
+            <form action="{% url 'home' %}" post="GET">
+                <input type="text" class="form-control shadow-main-color" placeholder="Busque por profissionais ..."
+                    name="medico">
+                <br>
+                <div class="especialidades">
+                        {% for especialidade in especialidades %}
+                        <div class="especialidade-item">
+                        <input type="checkbox" name="especialidades" value="{{especialidade.id}}">
+                        <span class="badge">
+                            {{especialidade.especialidade}}
+                        </span>
+                        </div>
+                        {% endfor %}
+                </div>
+                <br>
+                <input type="submit" value="filtrar" class="btn btn-success btn-dark-color">
+            </form>
+            <hr>
+
+            <!-- Listagem de médicos encontrados -->
+            {% for item in medicos %}
+            <div class="card-medicos shadow-main-color">
+                <div class="row">
+                    <div class="col-md-3">
+                        <img src="{{ item.medico.foto.url }}" class="foto-perfil-card" alt="">
+                    </div>
+                    <div class="col-md">
+                        <br>
+                        <p style="font-size: 20px;" class="p-bold">
+                            <span style="color: #555;">{{ item.prefixo }}</span> {{ item.medico.nome }}
+                            <i class="bi bi-patch-check-fill icon-main"></i>
+                        </p>
+                        <p>{{ item.medico.descricao }}</p>
+                    </div>
+                </div>
+                <br>
+                <p><i class="bi bi-map icon-main"></i> <span style="font-weight: 600;">Especialidade:</span> {{ item.medico.especialidade }}</p>
+                <p><i class="bi bi-calendar2-week icon-main"></i> <span style="font-weight: 600;">CRM:</span> {{ item.medico.crm }}</p>
+                <a href="{% url 'escolher_horario' item.medico.id %}" class="btn btn-success btn-dark-color">Agendar</a>
+            </div>
+            <br>
+            {% endfor %}      
+        </div>
+
+        <div class="col-md-4">
+             <!-- Lembrete sobre consultas agendadas -->
+            <p style="font-size: 20px" class="p-bold">Lembretes</p>
+            <p class="bg-main-lembrete">
+                <i class="bi bi-exclamation-triangle-fill icon-differential"></i>&nbsp&nbsp
+                <span style="font-weight:bold;">Fique atento as consultas agendadas no dia!</span>
+            </p>
+        </div>       
+    </div>
+</div>
+
+{% endblock 'body' %}
