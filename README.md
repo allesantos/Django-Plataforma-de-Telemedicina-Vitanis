@@ -7,10 +7,10 @@ Este é um projeto de uma plataforma de telemedicina desenvolvida com Django, pe
 ## Índice
 - [Descrição](#Descrição)
 - [Recursos](#Recursos)
+- [Uso](#Uso)
 - [Tecnologias Utilizadas](#Tecnologias)
 - [Pré-requisitos](#Pré-requisitos)
 - [Instalação](#Instalação)
-- [Uso](#Uso)
 - [Contribuição](#Contribuição)
 - [Licença](#Licença)
 
