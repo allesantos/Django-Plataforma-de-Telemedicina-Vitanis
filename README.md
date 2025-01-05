@@ -2,6 +2,8 @@
 
 Este é um projeto de uma plataforma de telemedicina desenvolvida com Django, permitindo que médicos e pacientes se cadastrem, façam login e interajam no sistema para agendar e realizar consultas online.
 
+<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Vitanis/img1.png">
+
 ## Índice
 - [Descrição](#Descrição)
 - [Recursos](#Recursos)
