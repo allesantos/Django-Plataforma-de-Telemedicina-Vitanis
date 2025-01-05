@@ -37,6 +37,81 @@ Este projeto é uma plataforma de telemedicina onde médicos e pacientes podem s
 -  __Videochamada:__ Funcionalidade para médicos e pacientes interagirem em tempo real através de videochamadas.
 
 
+## Uso
+
+1. Para utilizar o sistema é necessário realizar um cadastro, registrando apenas usuário, email e senha. Caso seja médico, também é necessário marcar a caixinha de seleção.
+
+<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Vitanis/img2.png">
+
+2. Se o usuário for médico, após clicar no botão "Cadastrar", será redirecionado para uma página onde irá ter que realizar um cadastro legal de médico. Este cadastro irá definir que tipo de usuário e quais privilégios irá ter na plataforma.
+
+<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Vitanis/img3.png">
+
+3. Após o cadastro, o usuário médico, será redirecionado para uma página para que ele possa abrir horários para consultas.
+
+<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Vitanis/img4.png">
+
+4. Caso tenhamos um usuário que será apenas paciente, ele irá precisar fazer também um cadastro inicial, basta apenas não marcar a opção de médico.
+
+<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Vitanis/img5.png">
+
+5. O usuário paciente será redirecionado para a página de login.
+
+<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Vitanis/img6.png">
+
+6. Após o login, o usuário paciente irá para a página home, onde é possível visualizar todos os médicos cadastrados e suas especialidades.
+
+<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Vitanis/img7.png">
+
+7. É possível realizar um filtro para localizar um médico cadastrado de acordo com sua especialidade. Esta função está disponível para médicos ou pacientes realizarem o filtro.
+
+<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Vitanis/img8.png">
+
+8. O filtro também poderá ser feito localizando o médico de acordo com sua especialidade.
+
+<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Vitanis/img9.png">
+
+9. Caso o usuário paciente tenha optado por filtrar um médico de acordo com sua especialidade, poderá ser exibida uma lista com todos que exercem a mesma função.
+
+<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Vitanis/img10.png">
+
+10. Após escolher o médico, o paciente será redirecionado para esta página, onde poderá agendar a consulta com base nos dias e horários disponíveis.
+
+<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Vitanis/img11.png">
+
+11. Após agendar a consulta, será redirecionado para esta página onde aqui exibirá todas as consultas já agendadas.
+
+<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Vitanis/img12.png">
+
+12. Clicando no nome do médico, o paciente irá acessar os detalhes da consulta que ele agendou. Nesta página, é possível realizar o cancelamento da consulta, caso o paciente decida desistir. Está disponível também a opção de adicionar a consulta no calendário, assim o paciente será sempre lembrado sobre a consulta que ele agendou.
+
+<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Vitanis/img13.png">
+
+13. No caso do médico, assim que ele fizer login, é possível visualizar todas as suas consultas e seus status.
+
+<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Vitanis/img14.png">
+
+14. Quando chegar o dia e horário da consulta, o médico irá clicar no nome do paciente.
+
+<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Vitanis/img15.png">
+
+15. Nesta página, médico irá adicionar o link da videoconferência e depois iniciar a consulta.
+
+<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Vitanis/img16.png">
+
+16. No caso do paciente, nesta página, o botão Acessar Consulta estará disponível, basta clicar e fazer o acesso.
+
+<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Vitanis/img17.png">
+
+17. Durante a consulta ou depois, o médico também pode publicar documentos como atestado médico, receitas, exames etc.
+
+<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Vitanis/img18.png">
+
+17. Quando uma consulta é finalizada, é exibido um verificador indicando o status de consulta realizada.
+
+<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Vitanis/19.png">
+
+
 ## Tecnologias
 
 -  __Django__
@@ -92,61 +167,6 @@ Além disso, recomenda-se usar um ambiente virtual Python para gerenciar depend�
 6. Acesse o sistema em http://127.0.0.1:8000/ no seu navegador.
 
 
-## Uso
-
-1. Para utilizar o sistema é necessário realizar um cadastro, registrando apenas usuário, email e senha. Caso seja médico, também é necessário marcar a caixinha de seleção.
-
-<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Vitanis/img2.png">
-
-2. Se o usuário for médico, após clicar no botão "Cadastrar", será redirecionado para uma página onde irá ter que realizar um cadastro legal de médico. Este cadastro irá definir que tipo de usuário e quais privilégios irá ter na plataforma.
-
-<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Vitanis/img3.png">
-
-3. Após o cadastro, o usuário médico, será redirecionado para uma página para que ele possa abrir horários para consultas.
-
-<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Vitanis/img4.png">
-
-4. Caso tenhamos um usuário que será apenas paciente, ele irá precisar fazer também um cadastro inicial, basta apenas não marcar a opção de médico.
-
-<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Vitanis/img5.png">
-
-5. O usuário paciente será redirecionado para a página de login.
-
-<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Vitanis/img6.png">
-
-6. Após o login, o usuário paciente irá para a página home, onde é possível visualizar todos os médicos cadastrados e suas especialidades.
-
-<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Vitanis/img7.png">
-
-7. É possível realizar um filtro para localizar um médico cadastrado de acordo com sua especialidade. Esta função está disponível para médicos ou pacientes realizarem o filtro.
-
-<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Vitanis/img8.png">
-
-8. O filtro também poderá ser feito localizando o médico de acordo com sua especialidade.
-
-<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Vitanis/img9.png">
-
-9. Caso o usuário paciente tenha optado por filtrar um médico de acordo com sua especialidade, poderá ser exibida uma lista com todos que exercem a mesma função.
-
-<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Vitanis/img10.png">
-
-10. Após escolher o médico, o paciente será redirecionado para esta página, onde poderá marcar a consulta com base nos dias e horários disponíveis.
-
-<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Vitanis/img11.png">
-
-7. É possível o médico visualizar todas as suas consultas e seus status.
-
-<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Telemedicina-Django/04.png">
-
-8. Quando chega o dia e horário da consulta, o médico adiciona o link da videoconferência e inicia a consulta.
-
-<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Telemedicina-Django/06.png">
-
-9. Quando uma consulta é finalizada com um paciente, o médico também pode publicar documentos como atestado médico, receitas, exames etc.
-
-<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Telemedicina-Django/07.png">
- 
-
 ## Contribuição
 
 Sinta-se à vontade para contribuir com este projeto. Siga estas etapas:
@@ -166,7 +186,6 @@ Sinta-se à vontade para contribuir com este projeto. Siga estas etapas:
     ```
 
 4. Abra um Pull Request neste repositório.
-
 
 
 ## Licença
