@@ -94,9 +94,9 @@ Além disso, recomenda-se usar um ambiente virtual Python para gerenciar depend�
 
 ## Uso
 
-1. Para utilizar o sistema é necessário realizar um cadastro, registrando apenas usuário, email e senha.
+1. Para utilizar o sistema é necessário realizar um cadastro, registrando apenas usuário, email e senha. Caso seja médico, também é necessário marcar a caixinha de seleção.
 
-<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Telemedicina-Django/00a.png">
+<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Vitanis/img2.png">
 
 2. Após o cadastro, é preciso fazer login para ter acesso a sua própria sessão de usuário.
 
