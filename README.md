@@ -102,6 +102,14 @@ Além disso, recomenda-se usar um ambiente virtual Python para gerenciar depend�
 
 <img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Vitanis/img3.png">
 
+3. Após o cadastro, o usuário médico, será redirecionado para uma página para que ele possa abrir horários para consultas.
+
+<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Vitanis/img4.png">
+
+4. Caso tenhamos um usuário que será apenas paciente, ele irá precisar fazer também um cadastro inicial, basta apenas não marcar a opção de médico.
+
+<img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Vitanis/img5.png">
+
 2. Após o cadastro, é preciso fazer login para ter acesso a sua própria sessão de usuário.
 
 <img src = "https://github.com/allesantos/allesantos/blob/main/imagens/Telemedicina-Django/00.png">
