@@ -57,17 +57,39 @@
                         <input type="text" class="form-control shadow-main-color" name="nome"
                             placeholder="Digite seu nome completo ...">
                     </div>
+
+                    <!-- Sexo -->
+                    <div class="col-md-3">
+                        <label for="sexo">Sexo:</label>
+                        <select name="sexo" class="form-select" id="sexo">
+                            <option value="">Selecione</option>
+                            <option value="M">Masculino</option>
+                            <option value="F">Feminino</option>
+                        </select>
+                    </div>
+
                     <!-- CEP -->
-                    <div class="col-md">
+                    <div class="col-md-3">
                         <label for="">CEP:</label>
                         <input type="text" name="cep" id="" class="form-control shadow-main-color" placeholder="Digite o seu CEP ...">
                     </div>
                 </div>
                 <br>
-                <!-- Rua -->
-                <label for="">Rua:</label>
-                <input type="text" name="rua" id="" class="form-control shadow-main-color" placeholder="Endereço ...">
-                <br>
+                <div class="row">
+                    <!-- Rua -->
+                    <div class="col-md">
+                        <label for="">Rua:</label>
+                        <input type="text" name="rua" id="" class="form-control shadow-main-color" placeholder="Endereço ...">
+                        <br>
+                    </div>
+
+                    <!-- Número da residência -->
+                    <div class="col-md-3">
+                        <label for="">Número:</label>
+                        <input type="number" name="numero" id="" class="form-control shadow-main-color" placeholder="N° da sua residência ...">
+                    </div>
+                </div>
+
                 <div class="row">
                     <!-- Bairro -->
                     <div class="col-md">
@@ -75,13 +97,49 @@
                         <input type="text" class="form-control shadow-main-color" name="bairro"
                             placeholder="Digite o seu bairro ...">
                     </div>
-                    <!-- Número da residência -->
+                    <!-- Cidade -->
                     <div class="col-md">
-                        <label for="">Número:</label>
-                        <input type="number" name="numero" id="" class="form-control shadow-main-color" placeholder="Número da sua residência ...">
+                        <label for="cidade">Cidade:</label>
+                        <input type="text" class="form-control shadow-main-color" name="cidade" placeholder="Digite sua cidade...">
+                    </div>
+
+                    <!-- Estado -->
+                    <div class="col-md-3">
+                        <label for="estado">Estado:</label>
+                        <select name="estado" class="form-select">
+                            <option value="">Selecione seu estado</option>
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espírito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>
+                        </select>
                     </div>
                 </div>
                 <br>
+
                 <!-- Upload de RG -->
                 <label for="">RG:</label>
                 <input type="file" name="rg" id="" class="form-control shadow-main-color">

@@ -37,10 +37,13 @@ def cadastro_medico(request):
         # Obtém os dados enviados pelo formulário para criar o cadastro do médico
         crm = request.POST.get('crm')
         nome = request.POST.get('nome')
+        sexo = request.POST.get('sexo') 
         cep = request.POST.get('cep')
         rua = request.POST.get('rua')
         bairro = request.POST.get('bairro')
         numero = request.POST.get('numero')
+        cidade = request.POST.get('cidade')
+        estado = request.POST.get('estado')
         cim = request.FILES.get('cim') 
         rg = request.FILES.get('rg') 
         foto = request.FILES.get('foto') 
@@ -51,10 +54,13 @@ def cadastro_medico(request):
         dados_medico = DadosMedico(
             crm=crm,
             nome=nome,
+            sexo=sexo, 
             cep=cep,
             rua=rua,
             bairro=bairro,
             numero=numero,
+            cidade=cidade,
+            estado=estado,
             rg=rg,
             cedula_identidade_medica=cim,
             foto=foto,

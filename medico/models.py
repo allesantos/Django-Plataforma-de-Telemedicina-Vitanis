@@ -21,13 +21,24 @@ class DadosMedico(models.Model):
         ('F', 'Feminino'),
     ]
     nome = models.CharField(max_length=100)
-    sexo = models.CharField(max_length=1, choices=SEXO_CHOICES)
+    sexo = models.CharField(max_length=1, choices=SEXO_CHOICES, null=False, blank=False)
     crm = models.CharField(max_length=30)
     nome = models.CharField(max_length=100)
     cep = models.CharField(max_length=15)
     rua = models.CharField(max_length=100)
     bairro = models.CharField(max_length=100)
     numero = models.IntegerField()
+    cidade = models.CharField(max_length=100) 
+    ESTADO_CHOICES = [
+        ('AC', 'Acre'), ('AL', 'Alagoas'), ('AP', 'Amapá'), ('AM', 'Amazonas'),
+        ('BA', 'Bahia'), ('CE', 'Ceará'), ('DF', 'Distrito Federal'), ('ES', 'Espírito Santo'),
+        ('GO', 'Goiás'), ('MA', 'Maranhão'), ('MT', 'Mato Grosso'), ('MS', 'Mato Grosso do Sul'),
+        ('MG', 'Minas Gerais'), ('PA', 'Pará'), ('PB', 'Paraíba'), ('PR', 'Paraná'),
+        ('PE', 'Pernambuco'), ('PI', 'Piauí'), ('RJ', 'Rio de Janeiro'), ('RN', 'Rio Grande do Norte'),
+        ('RS', 'Rio Grande do Sul'), ('RO', 'Rondônia'), ('RR', 'Roraima'), ('SC', 'Santa Catarina'),
+        ('SP', 'São Paulo'), ('SE', 'Sergipe'), ('TO', 'Tocantins'),
+    ]
+    estado = models.CharField(max_length=2, choices=ESTADO_CHOICES) 
     rg = models.ImageField(upload_to="rgs")
     cedula_identidade_medica = models.ImageField(upload_to='cim')
     foto = models.ImageField(upload_to="fotos_perfil")

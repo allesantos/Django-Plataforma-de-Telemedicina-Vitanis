@@ -2,6 +2,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
+
     # Rota para a página de cadastro de usuários
     path('cadastro/', views.cadastro, name="cadastro"),
 
